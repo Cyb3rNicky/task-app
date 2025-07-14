@@ -16,7 +16,7 @@ export default function AuthScreen() {
 
   useEffect(() => {
     if (session) {
-      router.replace("/"); // Redirige al layout principal
+      router.replace("/");
     }
   }, [session]);
 

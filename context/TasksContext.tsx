@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import { supabase } from '../lib/supabase';
 import { fetchTasks, Tasks } from '../lib/api';
-import { useUserInfo } from '../lib/userContext'; // Importa el hook del contexto Auth
+import { useUserInfo } from '../lib/userContext';
 
 type NuevaTarea = {
   titulo: string;
@@ -20,7 +20,6 @@ const TasksContext = createContext<TasksContextType | undefined>(undefined);
 export function TasksProvider({ children }: { children: React.ReactNode }) {
   const [tasks, setTasks] = useState<Tasks>([]);
   
-  // Obtener session del contexto Auth
   const { session } = useUserInfo();
 
  const refreshTasks = async () => {
@@ -33,7 +32,7 @@ export function TasksProvider({ children }: { children: React.ReactNode }) {
     .from('tareas')
     .select('*')
     .eq('user_id', session.user.id)
-    .order('fecha_vencimiento', { ascending: true }); // opcional: orden
+    .order('fecha_vencimiento', { ascending: true });
 
   if (error) {
     console.error('Error fetching tasks:', error);
@@ -49,7 +48,7 @@ export function TasksProvider({ children }: { children: React.ReactNode }) {
     }
     const taskWithUserId = {
       ...task,
-      user_id: session.user.id, // Incluir user_id aquí
+      user_id: session.user.id,
     };
     const { data, error } = await supabase
       .from('tareas')

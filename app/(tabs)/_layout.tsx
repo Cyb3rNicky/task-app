@@ -7,7 +7,7 @@ import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/components/useColorScheme';
 import { useClientOnlyValue } from '@/components/useClientOnlyValue';
 import { supabase } from '@/lib/supabase';
-import { useRouter } from 'expo-router';  // 👈 Importa useRouter
+import { useRouter } from 'expo-router';
 
 function TabBarIcon(props: {
   name: React.ComponentProps<typeof FontAwesome>['name'];
@@ -25,7 +25,7 @@ export default function TabLayout() {
     if (error) {
       console.error('Error cerrando sesión:', error.message);
     } else {
-      router.replace('/auth');  // 👈 Redirige a login o ruta que uses
+      router.replace('/auth');
     }
   };
 

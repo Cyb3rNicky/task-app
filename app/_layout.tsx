@@ -73,7 +73,7 @@ function RootLayoutNav() {
   const colorScheme = useColorScheme();
   const { session, isLoading } = useUserInfo();
 
-  if (isLoading) return null; // o una pantalla de carga
+  if (isLoading) return null;
 
   console.log("Sesión actual:", session);
 
