@@ -94,12 +94,6 @@ npm run android
 
 ✅ Registro e inicio de sesión con Supabase Auth
 
-📝 Crear, editar, completar y eliminar tareas
-
-🔍 Buscar tareas por nombre
-
-📆 Marca de tareas vencidas
-
-✅ Estado de completadas con ícono
+📝 Crear tareas
 
 🔒 Acceso seguro con RLS (tareas por usuario)
