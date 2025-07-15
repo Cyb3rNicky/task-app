@@ -85,6 +85,13 @@ function RootLayoutNav() {
             name={session ? "(tabs)" : "auth/index"}
             options={{ headerShown: false }}
           />
+          <Stack.Screen
+            name="modal"
+            options={{
+              title: "Editar Tarea",
+              presentation: "modal",
+            }}
+          />
         </Stack>
       </TasksProvider>
     </ThemeProvider>
